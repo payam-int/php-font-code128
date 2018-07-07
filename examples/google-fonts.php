@@ -12,7 +12,7 @@ function generateRandomString($length = 10) {
     return $randomString;
 }
 
-$str = utf8_encode((new Code128())->encode(generateRandomString(10)));
+$str = (new Code128())->encode(generateRandomString(10));
 ?>
 <!DOCTYPE html>
 <html lang="en">

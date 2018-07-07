@@ -15,6 +15,6 @@ class Code128
         $checksumMod = $checksum % 103;
         $checksumChar = chr($checksumMod + 32 > 126 ? $checksumMod + 32 + 18 : $checksumMod + 32);
 
-        return chr(self::TYPE_128 + 100) . $str . $checksumChar . chr(self::TYPE_CLOSE + 100);
+        return utf8_encode(chr(self::TYPE_128 + 100) . $str . $checksumChar . chr(self::TYPE_CLOSE + 100));
     }
 }
